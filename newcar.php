@@ -4,6 +4,10 @@
 		die("Database connection failed: " . $cnx->connect_error);
 	}
 
+    if (isset($_POST["newmodel"])){
+        header("Location: newmodel.php");
+    }
+
     if (isset($_POST["model"])){
         $car_count_query = "Select COUNT(*) from CAR";
         $car_count_results = $cnx->query($car_count_query);
@@ -14,7 +18,6 @@
 
         $insert_query = "INSERT INTO CAR(VIN, MName, Year, BID) VALUES (" . $vin . ", '" . $model_choice[0] . "', " . $model_choice[1] . ", " . $_POST["branch"] . ")";
         $cnx->query($insert_query);
-        //echo $insert_query;
     }
 
     $branch_query = "SELECT * from BRANCH";
@@ -38,6 +41,8 @@
 ?>
 
 <form method="POST">
+    <div>
+        <input type="submit" name="newmodel" value="Add new model" />;
     <div>
         <label for="model">Model</label>
         <select id="model" name="model">
