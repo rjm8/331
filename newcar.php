@@ -57,5 +57,5 @@
         </select>
     </div>
 
-    <input type="submit" value="Move Car" />
+    <input type="submit" value="Add Car" />
 </form>
