@@ -27,7 +27,7 @@
             while ($row = $cursor->fetch_assoc()) {
                 echo '<li>';
                 echo $row['Year'] . ' ' . $row['MName'];
-                //echo '<button onclick="window.location.href = \'compare.php?id=' . $row['id'] . '\';">Buy</button>';
+                echo '<button onclick="window.location.href = \'compare.php?id=' . $row['id'] . '\';">Buy</button>';
                 echo '</li>';
             }
         }
