@@ -7,6 +7,7 @@
     if (isset($_POST["car"])){
         $update_query = "UPDATE CAR SET BID = " . $_POST["branch"] . " WHERE VIN=" . $_POST["car"];
         $cnx->query($update_query);
+        echo "Done.";
     }
 
     $branch_query = "SELECT * from BRANCH";

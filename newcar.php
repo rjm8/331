@@ -18,6 +18,7 @@
 
         $insert_query = "INSERT INTO CAR(VIN, MName, Year, BID) VALUES (" . $vin . ", '" . $model_choice[0] . "', " . $model_choice[1] . ", " . $_POST["branch"] . ")";
         $cnx->query($insert_query);
+        echo "Done.";
     }
 
     $branch_query = "SELECT * from BRANCH";
